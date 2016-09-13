@@ -1,0 +1,42 @@
+
+<html>
+<script src="node_modules/angular/angular.min.js"></script>
+<link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+<body>
+
+<!-- <div ng-app="myApp" ng-controller="myCtrl">
+ 	<my-dir ng-repeat="point in points"></my-dir>
+  <h3>Seem there are less. Which numbers square you want please enter in textField</h3>
+  <input type="text" ng-model="square">
+  <h4>Square of {{square}} : {{ square*square }}</h4>
+</div> -->
+
+<!-- <form ng-app="myApp" ng-controller="myCtrl" name="myForm" ng-init="myText = 'love@angular.com'">
+    Email:
+    <input type="email" name="myEmail" ng-model="myText" required>
+    <span ng-show="myForm.myEmail.$error.email">Not a Valid email</span>
+    <h1>Status</h1>
+    {{myForm.myEmail.$valid}}
+    {{myForm.myEmail.$dirty}}
+    {{myForm.myEmail.$touched}}
+</form> -->
+<div ng-app="myApp" ng-controller="myCtrl">
+  <input type="text" ng-model="name">
+  <input type="button" ng-click="addName(name)" value="Add" name="Add">
+  <!-- <ul>
+    <li ng-repeat="addedName in names | orderBy: addedName">{{ addedName | uppercase}}</li>
+  </ul> -->
+  <table>
+    <tr ng-repeat="addedName in names | orderBy:addedName">
+      <td >
+        {{$index+1}}. {{ addedName | uppercase}}
+      </td>
+    </tr>
+  </table>
+</div>
+
+<script src="scripts/myApp.js"></script>
+<script src="scripts/myDir.js" charset="utf-8"></script>
+<script src="scripts/myCtrl.js" charset="utf-8"></script>
+</body>
+</html>
